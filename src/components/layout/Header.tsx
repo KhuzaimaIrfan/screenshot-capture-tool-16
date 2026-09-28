@@ -112,7 +112,7 @@ export function Header() {
                       <Link
                         key={child.label}
                         to={child.to}
-                        search={child.search}
+                        {...(child.search ? { search: child.search } : {})}
                         className="block px-3 py-2.5 text-[0.8125rem] text-popover-foreground transition-colors hover:bg-secondary"
                       >
                         {child.label}
@@ -242,7 +242,7 @@ export function Header() {
                               <Link
                                 key={child.label}
                                 to={child.to}
-                                search={child.search}
+                                {...(child.search ? { search: child.search } : {})}
                                 className="block py-2.5 text-sm text-muted-foreground"
                               >
                                 {child.label}

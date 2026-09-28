@@ -1,7 +1,7 @@
 import type { Agent, Property } from "@/types/property";
 import { img } from "./images";
 
-const agents: Record<string, Agent> = {
+const agents = {
   noora: {
     id: "a1",
     name: "Noora Al-Mansouri",
@@ -26,7 +26,7 @@ const agents: Record<string, Agent> = {
     email: "layla@alnoor.qa",
     languages: ["Arabic", "English", "Hindi"],
   },
-};
+} satisfies Record<string, Agent>;
 
 const baseAmenities = [
   "Swimming pool",

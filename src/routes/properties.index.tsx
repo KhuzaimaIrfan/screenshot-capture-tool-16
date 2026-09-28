@@ -152,7 +152,7 @@ function PropertiesPage() {
                         >
                           Clear filters
                         </ActionButton>
-                        <ActionLink to="/properties" search={{}} variant="outline" size="sm">
+                        <ActionLink to="/properties" variant="outline" size="sm">
                           Browse all properties
                         </ActionLink>
                       </>

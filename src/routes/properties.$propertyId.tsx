@@ -71,7 +71,7 @@ function PropertyNotFound() {
         title="This property is no longer listed."
         description="It may have been sold, let, or withdrawn. Our current instructions are all here."
         actions={
-          <ActionLink to="/properties" search={{}} variant="solid" size="sm">
+          <ActionLink to="/properties" variant="solid" size="sm">
             Browse all properties
           </ActionLink>
         }
@@ -82,7 +82,7 @@ function PropertyNotFound() {
 
 function PropertyDetail() {
   const { property, similar } = Route.useLoaderData();
-  const { isFavorite, toggle } = useFavorites();
+  const { isFavorite, toggleFavorite } = useFavorites();
   const saved = isFavorite(property.id);
 
   const facts = [
@@ -138,7 +138,7 @@ function PropertyDetail() {
                 </p>
                 <button
                   type="button"
-                  onClick={() => toggle(property.id)}
+                  onClick={() => toggleFavorite(property.id)}
                   aria-pressed={saved}
                   className={cn(
                     "flex h-11 items-center gap-2.5 border px-5 text-[0.75rem] uppercase tracking-[0.14em] transition-colors",

@@ -56,18 +56,18 @@ export interface Property {
 }
 
 export interface PropertyFilters {
-  purpose?: Purpose;
-  type?: PropertyType;
-  category?: string;
-  location?: string;
-  minPrice?: number;
-  maxPrice?: number;
-  beds?: number;
-  baths?: number;
-  minArea?: number;
-  amenities?: string[];
-  sort?: PropertySort;
-  query?: string;
+  purpose?: Purpose | undefined;
+  type?: PropertyType | undefined;
+  category?: string | undefined;
+  location?: string | undefined;
+  minPrice?: number | undefined;
+  maxPrice?: number | undefined;
+  beds?: number | undefined;
+  baths?: number | undefined;
+  minArea?: number | undefined;
+  amenities?: string[] | undefined;
+  sort?: PropertySort | undefined;
+  query?: string | undefined;
 }
 
 export type PropertySort =

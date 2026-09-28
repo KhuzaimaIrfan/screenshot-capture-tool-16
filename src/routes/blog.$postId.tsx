@@ -41,7 +41,7 @@ export const Route = createFileRoute("/blog/$postId")({
         title="We couldn't find that article."
         description="It may have been renamed or removed."
         actions={
-          <ActionLink to="/blog" search={{}} variant="solid" size="sm">
+          <ActionLink to="/blog" variant="solid" size="sm">
             All insights
           </ActionLink>
         }
