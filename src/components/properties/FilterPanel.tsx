@@ -48,12 +48,12 @@ const selectClass =
   "h-11 w-full border border-border bg-background px-3 text-sm outline-none focus:border-foreground";
 
 export function FilterPanel({ search }: { search: PropertySearchParams }) {
-  const navigate = useNavigate({ from: "/properties" });
+  const navigate = useNavigate();
 
   const update = (patch: Partial<PropertySearchParams>) => {
     navigate({
-      to: ".",
-      search: (prev) => ({ ...prev, ...patch, page: undefined }),
+      to: "/properties",
+      search: { ...search, ...patch, page: undefined },
       resetScroll: false,
     });
   };
@@ -221,7 +221,7 @@ export function FilterPanel({ search }: { search: PropertySearchParams }) {
         <button
           type="button"
           onClick={() =>
-            navigate({ to: ".", search: { sort: search.sort }, resetScroll: false })
+            navigate({ to: "/properties", search: { sort: search.sort }, resetScroll: false })
           }
           className="rule-link inline-flex items-center gap-2 text-[0.75rem] uppercase tracking-[0.16em]"
         >

@@ -43,7 +43,7 @@ export const Route = createFileRoute("/properties/")({
 function PropertiesPage() {
   const { results } = Route.useLoaderData();
   const search = Route.useSearch();
-  const navigate = useNavigate({ from: "/properties" });
+  const navigate = useNavigate();
   const isLoading = useRouterState({ select: (s) => s.status === "pending" });
   const { favorites } = useFavorites();
 
@@ -119,11 +119,8 @@ function PropertiesPage() {
                       value={search.sort ?? "featured"}
                       onChange={(e) =>
                         navigate({
-                          to: ".",
-                          search: (prev) => ({
-                            ...prev,
-                            sort: e.target.value as typeof search.sort,
-                          }),
+                          to: "/properties",
+                          search: { ...search, sort: e.target.value as typeof search.sort },
                           resetScroll: false,
                         })
                       }
@@ -151,7 +148,7 @@ function PropertiesPage() {
                         <ActionButton
                           variant="solid"
                           size="sm"
-                          onClick={() => navigate({ to: ".", search: {} })}
+                          onClick={() => navigate({ to: "/properties", search: {} })}
                         >
                           Clear filters
                         </ActionButton>
@@ -180,8 +177,8 @@ function PropertiesPage() {
                           variant="outline"
                           onClick={() =>
                             navigate({
-                              to: ".",
-                              search: (prev) => ({ ...prev, page: page + 1 }),
+                              to: "/properties",
+                              search: { ...search, page: page + 1 },
                               resetScroll: false,
                             })
                           }
